@@ -14,6 +14,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import nightConstellationImage from 'src/assets/images/Night-constellation.png';
 import astrowithtech from 'src/assets/images/astro-w-tech.png';
 import foursteps from 'src/assets/images/4-steps.png';
+import infographywhy from 'src/assets/images/infography.png';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -38,7 +39,7 @@ const metadata = {
     image={{ src: nightConstellationImage, alt: 'Night constellation' }}
   >
     <Fragment slot="title">
-      “Millionaires don't use Astrology, billionaires do.” </br>
+      “Millionaires don't use Astrology </br>Billionaires do.” </br>
       <div style="float:right display:inline;">― J.P. Morgan</div>
 
     </Fragment>
@@ -55,6 +56,37 @@ const metadata = {
   <!-- Note Widget ******************* -->
 
   <Note />
+
+    <!-- Steps Widget ****************** -->
+
+    <Steps
+    title="Why did we create MyAstrologist.ai"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Download</span>',
+        description:
+          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Add content</em>',
+        description:
+          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        description:
+          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Ready!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{ src: infographywhy, alt: 'Why weekly horoscope?' }}
+  />
 
   <!-- Features Widget *************** -->
 
@@ -116,14 +148,14 @@ const metadata = {
           'Choose your preferred plan and create your profile.',
       },
       {
-        title: 'Receive Weekly Guidance',
+        title: 'Listen your Weekly Guidance',
         description:
-          'Get your astrological insights delivered to your email and/or WhatsApp every week.',
+          'Get your astrological insights delivered to you in an audio directly in WhatsApp every Monday morning. No need to install anything. Do not worry you will also receive an email with your reading',
       },
       {
         title: 'Take Notes',
         description:
-          'Whether mental notes or on paper. Prepare yourself for this week’s energy',
+          'Whether mental notes or on paper, take notes and prepare yourself for this week’s energy',
       },
       {
         title: 'Rock your week',
@@ -215,39 +247,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
 
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</em>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
 
   <!-- Features2 Widget ************** -->
 
