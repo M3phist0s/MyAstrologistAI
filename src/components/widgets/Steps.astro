@@ -4,8 +4,6 @@ import Timeline from '~/components/ui/Timeline.astro';
 import Headline from '~/components/ui/Headline.astro';
 import Image from '~/components/common/Image.astro';
 import type { Steps as Props } from '~/types';
-import { useState } from 'react';
-
 
 const {
   title = await Astro.slots.render('title'),
@@ -21,46 +19,6 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 ---
-<!-- /* Secction added */ -->
-const StepItem = ({ title, description, icon }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const handleToggle = () => {
-    setIsExpanded(!isExpanded);
-  };
-
-  return (
-    <div className="step-item">
-      <div className="step-header" onClick={handleToggle}>
-        <i className={`icon ${icon}`}></i>
-        <span dangerouslySetInnerHTML={{ __html: title }}></span>
-      </div>
-      {isExpanded && (
-        <div className="step-description" dangerouslySetInnerHTML={{ __html: description }}></div>
-      )}
-    </div>
-  );
-};
-
-const Steps = ({ title, items }) => {
-  return (
-    <div className="steps">
-      <h2>{title}</h2>
-      {items.map((item, index) => (
-        <StepItem
-          key={index}
-          title={item.title}
-          description={item.description}
-          icon={item.icon}
-        />
-      ))}
-    </div>
-  );
-};
-
-export default Steps;
-<!-- /* End Secction added */ -->
-
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
   <div class:list={['flex flex-col gap-8 md:gap-12', { 'md:flex-row-reverse': isReversed }, { 'md:flex-row': image }]}>
