@@ -1,21 +1,20 @@
 ---
 import React from 'react';
 import Auth0ProviderWithHistory from '../auth/Auth0ProviderWithHistory';
-
-// Ensure these imports are for Astro components
-import Layout from '~/layouts/Layout.astro';
-import Header from '~/components/widgets/Header.astro';
-import Footer from '~/components/widgets/Footer.astro';
-import Announcement from '~/components/widgets/Announcement.astro';
+import Layout from '~/layouts/Layout.astro'; // Astro component
+import Header from '~/components/widgets/Header.astro'; // Astro component
+import Footer from '~/components/widgets/Footer.astro'; // Astro component
+import Announcement from '~/components/widgets/Announcement.astro'; // Astro component
 
 import { headerData, footerData } from '~/navigation';
 import type { MetaData } from '~/types';
 
 export interface Props {
   metadata?: MetaData;
+  children: React.ReactNode;
 }
 
-const PageLayout = ({ metadata, children }) => {
+const PageLayout = ({ metadata, children }: Props) => {
   return (
     <Auth0ProviderWithHistory>
       <Layout metadata={metadata}>
