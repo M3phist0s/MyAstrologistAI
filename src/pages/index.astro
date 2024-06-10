@@ -1,3 +1,4 @@
+// src/pages/index.astro (or your main index component)
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
@@ -15,6 +16,7 @@ import nightConstellationImage from 'src/assets/images/Night-constellation.png';
 import astrowithtech from 'src/assets/images/astro-w-tech.png';
 import foursteps from 'src/assets/images/4-steps.png';
 import infographywhy from 'src/assets/images/Infography.png';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const metadata = {
   title: 'MyAstrologist.ai is your own personal horoscope delivered to you weekly',
@@ -42,6 +44,9 @@ const metadata = {
       “Millionaires don't use Astrology </br>Billionaires do.” </br>
       <div style="float:right display:inline;">― J.P. Morgan</div>
 
+      <div>
+        <Index />
+      </div>
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -57,10 +62,10 @@ const metadata = {
 
   <Note />
 
-    <!-- Steps Widget ****************** -->
+  <!-- Steps Widget ****************** -->
 
-    <Steps
-    title="Why did we create MyAstrologist.ai - Backup Pre APP"
+  <Steps
+    title="Why did we create MyAstrologist.ai - Backup Pre "
     items={[
       {
         title: 'Step 1: <span class="font-medium">Recognizing the Complexity</span>',
