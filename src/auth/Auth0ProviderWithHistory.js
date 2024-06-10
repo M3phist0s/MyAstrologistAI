@@ -1,21 +1,16 @@
 // src/auth/Auth0ProviderWithHistory.js
-import React from 'react';
 import { Auth0Provider } from '@auth0/auth0-react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 
 const Auth0ProviderWithHistory = ({ children }) => {
-  const history = useHistory();
-
-  const onRedirectCallback = (appState) => {
-    history.push(appState?.returnTo || window.location.pathname);
-  };
+  const domain = process.env.NEXT_PUBLIC_AUTH0_DOMAIN;
+  const clientId = process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID;
 
   return (
     <Auth0Provider
-      domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN}
-      clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID}
+      domain={domain}
+      clientId={clientId}
       redirectUri={window.location.origin}
-      onRedirectCallback={onRedirectCallback}
     >
       {children}
     </Auth0Provider>
